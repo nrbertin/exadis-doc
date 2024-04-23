@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quick start &#8212; ExaDis 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Welcome to ExaDiS documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="quick-start">
+<h1>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<p><strong>ExaDiS</strong> is implemented using the <a class="reference external" href="https://kokkos.org">Kokkos</a> framework
+and built using the CMake build system.</p>
+<div class="section" id="step-1-install-kokkos">
+<h2>Step 1: Install Kokkos<a class="headerlink" href="#step-1-install-kokkos" title="Permalink to this headline">¶</a></h2>
+<p>To use ExaDiS, first install Kokkos: <a class="reference external" href="https://kokkos.org">https://kokkos.org</a></p>
+</div>
+<div class="section" id="step-2-build-exadis">
+<h2>Step 2: Build ExaDiS<a class="headerlink" href="#step-2-build-exadis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Clone the repository</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/LLNL/exadis.git</span>
+<span class="go">cd exadis</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Initialize the submodules (required if enabling the python binding)</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git submodule init</span>
+<span class="go">git submodule update</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Build the code</p></li>
+</ul>
+<p>Examples of building scripts are provided at the root of the exadis project,
+e.g. see file <code class="docutils literal notranslate"><span class="pre">build_mac.sh</span></code>. The Kokkos root path must be specified with option <code class="docutils literal notranslate"><span class="pre">-DKokkos_ROOT</span></code>.
+A typical build instruction will look like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build &amp;&amp; cd build</span>
+<span class="go">cmake \</span>
+<span class="go">    -DKokkos_ROOT=/path/to/your/kokkos/install/lib/cmake/Kokkos \</span>
+<span class="go">    -DCMAKE_CXX_COMPILER=c++ \</span>
+<span class="go">    -DPYTHON_BINDING=On \</span>
+<span class="go">    ..</span>
+<span class="go">make -j8</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Building with nvcc (Cuda) may be pretty slow, please be patient!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For additional building options and troubleshooting see section <a class="reference internal" href="installation.html"><span class="doc">Installation</span></a>.</p>
+</div>
+</div>
+<div class="section" id="step-3-test-your-installation">
+<h2>Step 3: Test your installation<a class="headerlink" href="#step-3-test-your-installation" title="Permalink to this headline">¶</a></h2>
+<p>Run an example (assuming <code class="docutils literal notranslate"><span class="pre">-DPYTHON_BINDING=On</span></code>)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd examples/02_frank_read_src</span>
+<span class="go">python test_frank_read_src.py</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">ExaDis</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide.html">Developer Guide</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to ExaDiS documentation!</a></li>
+      <li>Next: <a href="installation.html" title="next chapter">Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, Nicolas Bertin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/quick_start.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
