@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'ExaDis'
+project = 'ExaDiS'
 copyright = '2024, Nicolas Bertin'
 author = 'Nicolas Bertin'
 
